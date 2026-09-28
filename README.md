@@ -1,6 +1,6 @@
-# Qavyo pricing — sections 1–8 preview
+# Qavyo pricing — sections 1–9 preview
 
-Local standalone Next.js App Router project with TypeScript, Tailwind CSS v4, Lucide and locally bundled Manrope. Navigation, the approved hero, pricing plans, Qavyo Intelligence, 30 Days. Full Qavyo., full feature comparison, flexible hardware, Qavyo-certified setup options, and payments and pricing clarity are implemented. The older prototype is not used.
+Local standalone Next.js App Router project with TypeScript, Tailwind CSS v4, Lucide and locally bundled Manrope. Navigation, the approved hero, pricing plans, Qavyo Intelligence, 30 Days. Full Qavyo., full feature comparison, flexible hardware, Qavyo-certified setup options, payments and pricing clarity, and FAQ are implemented. The older prototype is not used.
 
 ## Run
 
@@ -52,10 +52,13 @@ pnpm start
 - `hardware/HardwareSetupSection.module.css`: scoped physical-configuration presentation. Desktop compares three setup benches; tablet turns each into a wide equipment layout; mobile stacks configurations while preserving readable device names, quantities and example status.
 - `payments/PaymentsClaritySection.tsx`: Section 8 cost architecture, software-plan prices, hardware choice, provider-neutral payment-processing explanation, payment flow, connected Qavyo operational data, no-hidden-unlocks message and closing trust statement. It does not state processing rates, imply that Qavyo holds money, or use third-party payment logos.
 - `payments/PaymentsClaritySection.module.css`: scoped responsive styling for the three connected commercial components and side-by-side payment/Qavyo flow. Tablet widens and stacks cost components; mobile turns every path into a readable vertical sequence.
+- `faq/faq-data.ts`: typed FAQ dataset with the 10 specified questions across Trial & Plans, Hardware, Payments, Intelligence & Operations, and Setup & Switching, strictly upholding all business rules.
+- `faq/FAQSection.tsx`: accessible accordion with semantic headings and buttons, aria-expanded/aria-controls, multi-item support, and desktop sticky intro.
+- `faq/FAQSection.module.css`: scoped styling using existing tokens, smooth rotational chevrons, generous mobile touch targets, and reduced-motion support.
 
 ## Assumptions and scope
 
-The new palette, spacing, type scale and surfaces are provisional design tokens, not a recovered brand system. The product interface is an illustrative design, not a production screenshot. The offer includes all eligible software and full Qavyo Intelligence for 30 days; paid plan selection follows the trial. Hardware entitlement is not implied. Starter is £29/month, Growth £79/month, and Business £149/month. Hardware compatibility depends on the device, operating system, peripherals and integrations; payment terminal inclusion in the visual does not claim universal payment compatibility. Hardware configurations are examples independent from software tiers. Payment options are described only as available where eligible. Payment-processing rates depend on the configured arrangement and transaction and are intentionally omitted. No sections beyond payments and pricing clarity have been built.
+The new palette, spacing, type scale and surfaces are provisional design tokens, not a recovered brand system. The product interface is an illustrative design, not a production screenshot. The offer includes all eligible software and full Qavyo Intelligence for 30 days; paid plan selection follows the trial. Hardware entitlement is not implied. Starter is £29/month, Growth £79/month, and Business £149/month. Hardware compatibility depends on the device, operating system, peripherals and integrations; payment terminal inclusion in the visual does not claim universal payment compatibility. Hardware configurations are examples independent from software tiers. Payment options are described only as available where eligible. Payment-processing rates depend on the configured arrangement and transaction and are intentionally omitted. No sections beyond FAQ have been built.
 
 The Intelligence demo uses fixed sample inputs: £860 sales vs £1,000 baseline, 36 dinner orders vs 50, 18 kg stock and 24 kg projected demand. The -14% sales change and 6 kg purchase suggestion are calculated in code. The forecast is a labelled illustrative input, not a live model prediction. The stock check is separate from the explanation of lower sales. The purchase button creates only local sample UI state; no order is sent or stored, and no successful outcome is invented. Reset restores the initial story.
 
@@ -82,6 +85,8 @@ Section 6 passed lint, TypeScript and production build checks. Browser checks at
 Section 7 passed responsive browser checks at 1440, 1280, 768, 390 and 320px. Verification covered all three configuration figures, hardware/software independence, eligibility wording, approved navigation and interactions, horizontal overflow, failed responses and browser runtime errors. Approved section source files were unchanged; only page composition and documentation changed outside Section 7.
 
 Section 8 passed lint, TypeScript and production build checks. Responsive browser verification covers the three-part cost architecture, software prices, payment-flow labels, six connected operational capabilities, approved-section regressions, horizontal overflow, failed application responses and application runtime errors. Approved section source files were unchanged; only page composition and documentation changed outside Section 8.
+
+Section 9 passed lint, TypeScript and production build checks. Responsive browser verification at 1440, 1280, 768, 390 and 320px confirmed 0 horizontal overflow, initial expansion of Question 1, independent expansion of Question 2 and Question 8 (with all 3 distinct paragraphs), collapsing of Question 1, keyboard focus and Enter/Space toggling, and no browser console or runtime errors. Approved Sections 1–8 remain unchanged; only page composition and documentation changed outside Section 9.
 
 Section 4 passed lint, TypeScript and production build checks. Browser checks at 1440, 1280, 768, 390 and 320px confirmed no horizontal overflow or runtime errors, working CTA notices, visible keyboard focus and reduced-motion behavior. The approved Hero, Pricing and Intelligence source files and global styles were not changed. Outside Section 4, only page composition and documentation changed.
 
@@ -121,6 +126,9 @@ src/components/hardware/HardwareSetupSection.tsx
 src/components/hardware/HardwareSetupSection.module.css
 src/components/payments/PaymentsClaritySection.tsx
 src/components/payments/PaymentsClaritySection.module.css
+src/components/faq/faq-data.ts
+src/components/faq/FAQSection.tsx
+src/components/faq/FAQSection.module.css
 ```
 
 Generated local artifacts: `node_modules`, `.next`, `tsconfig.tsbuildinfo`, and `.qa/hero-{1440,1280,768,390}.png` (ignored).
