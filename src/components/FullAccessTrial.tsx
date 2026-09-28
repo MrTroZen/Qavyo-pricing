@@ -41,7 +41,7 @@ export function FullAccessTrial() {
     <section id="full-access" className={styles.section} aria-labelledby="full-access-heading">
       <div className="container">
         <div className={styles.intro}>
-          <div><p className="eyebrow">30-DAY FULL ACCESS</p><h2 id="full-access-heading">30 days. Full Qavyo.</h2><p className={styles.promise}>Experience everything first.<br /><span>Choose your plan later.</span></p></div>
+          <div><p className="eyebrow">30-DAY FULL ACCESS</p><h2 id="full-access-heading">Experience everything first.<br /><span>Choose your plan later.</span></h2></div>
           <p className={styles.supporting}>For your first 30 days, Qavyo unlocks the full eligible software platform and Full Qavyo Intelligence. Run your restaurant with everything available, then choose the plan that fits your business.</p>
         </div>
         <ol className={styles.journey} aria-label="Your first 30 days with Qavyo">

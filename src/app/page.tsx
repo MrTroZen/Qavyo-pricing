@@ -10,5 +10,5 @@ import { PaymentsClaritySection } from '@/components/payments/PaymentsClaritySec
 import { FAQSection } from '@/components/faq/FAQSection';
 import { FinalCTASection } from '@/components/cta/FinalCTASection';
 export default function PricingPage() {
-  return <><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main"><PricingHero /><PricingPlans /><QavyoIntelligence /><FullAccessTrial /><FeatureComparison /><HardwareSection /><HardwareSetupSection /><PaymentsClaritySection /><FAQSection /><FinalCTASection /></main></>;
+  return <><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main" tabIndex={-1}><PricingHero /><PricingPlans /><QavyoIntelligence /><FullAccessTrial /><FeatureComparison /><HardwareSection /><HardwareSetupSection /><PaymentsClaritySection /><FAQSection /><FinalCTASection /></main></>;
 }

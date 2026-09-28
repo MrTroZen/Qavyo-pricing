@@ -24,6 +24,7 @@ svg { width: 20px; height: 20px; stroke-width: 1.7; flex-shrink: 0; }
 .container { width: min(1320px, calc(100% - 96px)); margin-inline: auto; }
 .skip-link { position: fixed; top: -100px; left: 16px; z-index: 50; padding: 16px; background: white; }
 .skip-link:focus { top: 12px; }
+#main:focus { outline: none; }
 .site-header { background: var(--surface); border-bottom: 1px solid var(--border); }
 .header-inner { height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .wordmark { font-size: 34px; font-weight: 850; letter-spacing: -2px; line-height: 1; }
@@ -81,7 +82,7 @@ h1 > span { display: block; color: var(--accent); margin-top: 6px; }
 .dashboard-content { padding: 24px 20px 21px; }
 .dashboard-title { display: flex; align-items: center; justify-content: space-between; }
 .interface-kicker { font-size: 7px; letter-spacing: .1em; font-weight: 750; color: var(--muted); }
-.dashboard-title h2 { font-size: 21px; letter-spacing: -.05em; font-weight: 700; margin: 5px 0 0; }
+.dashboard-title h2, .dashboard-title-text { font-size: 21px; letter-spacing: -.05em; font-weight: 700; margin: 5px 0 0; }
 .today { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); border-radius: 5px; padding: 6px 8px; font-size: 8px; }
 .today svg { width: 10px; height: 10px; }
 .module-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 22px 0; }
@@ -132,7 +133,7 @@ figcaption > span { height: 5px; width: 5px; border-radius: 50%; background: var
 .preview-dialog { width: min(460px, calc(100% - 40px)); margin: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 38px 28px 28px; background: var(--surface); box-shadow: var(--shadow-lg); color: var(--ink); }
 .preview-dialog::backdrop { background: #13243380; }
 .dialog-close { position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; }
-.preview-dialog h2 { font-size: 26px; font-weight: 750; margin: 18px 0 12px; }
+.preview-dialog h2, .preview-dialog-title { font-size: 26px; font-weight: 750; margin: 18px 0 12px; }
 .preview-dialog p { line-height: 1.7; font-size: 15px; margin: 0 0 24px; color: var(--secondary); }
 @media (min-width: 1600px) { .hero { min-height: 820px; } }
 @media (max-width: 1199px) {
@@ -146,7 +147,7 @@ figcaption > span { height: 5px; width: 5px; border-radius: 50%; background: var
   .mobile-nav:not([hidden]) { display: grid; padding: 8px 32px 24px; gap: 4px; border-top: 1px solid var(--border); }.mobile-nav .nav-link { text-align: left; min-height: 44px; }.mobile-nav .active::after { display: none; }.mobile-nav .active { color: var(--accent); }
   .hero { grid-template-columns: 1fr; gap: 48px; padding-block: 54px 64px; }.hero-copy { max-width: 620px; }h1 { font-size: 56px; }.hero-description { max-width: 570px; font-size: 17px; }.desktop-break { display: none; }
   .trial-heading { font-size: 11px; }.trial-heading strong { font-size: 12px; }.trial-offer p { font-size: 14px; }.product-preview { width: 100%; max-width: 680px; justify-self: center; padding: 0; }
-  .dashboard-content { padding: 24px; }.dashboard-title h2 { font-size: 25px; }.intelligence-composition { margin-left: 32px; margin-right: 0; gap: 15px; }.daily-brief { padding: 22px; }.brief-top { font-size: 9px; }.brief-sample { display: inline; }.insight-card { padding: 16px 14px; }.insight-card h3 { font-size: 12px; }.insight-card p { font-size: 11px; }.daily-brief > p, .brief-summary { font-size: 12px; }.brief-bottom { font-size: 10px; }
+  .dashboard-content { padding: 24px; }.dashboard-title h2, .dashboard-title-text { font-size: 25px; }.intelligence-composition { margin-left: 32px; margin-right: 0; gap: 15px; }.daily-brief { padding: 22px; }.brief-top { font-size: 9px; }.brief-sample { display: inline; }.insight-card { padding: 16px 14px; }.insight-card h3 { font-size: 12px; }.insight-card p { font-size: 11px; }.daily-brief > p, .brief-summary { font-size: 12px; }.brief-bottom { font-size: 10px; }
 }
 @media (max-width: 599px) {
   .container { width: calc(100% - 40px); }.header-inner { height: 76px; }.wordmark { font-size: 30px; }.mobile-nav:not([hidden]) { padding-inline: 20px; }
@@ -155,7 +156,7 @@ figcaption > span { height: 5px; width: 5px; border-radius: 50%; background: var
   .hero-actions { gap: 9px; }.hero-actions .button { font-size: 12px; padding-inline: 13px; gap: 9px; min-height: 54px; }.hero-actions .button-primary { flex: 1; }.hero-actions svg { width: 16px; height: 16px; }.plan-note { font-size: 11px; margin-top: 14px; }
   .preview-overline { font-size: 7px; letter-spacing: .06em; gap: 6px; }.preview-line { width: 12px; }.sample-label { font-size: 6px; }
   .dashboard-sidebar { width: 33px; gap: 18px; padding-top: 12px; }.dashboard-sidebar > svg { width: 14px; height: 14px; }.mini-brand { font-size: 20px; }.dashboard-topbar { padding-inline: 10px; height: 43px; font-size: 8px; }.dashboard-topbar > div { gap: 7px; }.dashboard-topbar > div > svg { display: none; }
-  .dashboard-content { padding: 16px 10px; }.dashboard-title h2 { font-size: 19px; }.interface-kicker { font-size: 6px; }.module-grid { gap: 5px; margin-block: 16px; }.module-grid > div { padding: 9px 5px; gap: 7px; }.module-grid > div > span { font-size: 7px; }.module-grid .module-status { font-size: 5px; gap: 3px; }.module-grid svg { width: 14px; height: 14px; }
+  .dashboard-content { padding: 16px 10px; }.dashboard-title h2, .dashboard-title-text { font-size: 19px; }.interface-kicker { font-size: 6px; }.module-grid { gap: 5px; margin-block: 16px; }.module-grid > div { padding: 9px 5px; gap: 7px; }.module-grid > div > span { font-size: 7px; }.module-grid .module-status { font-size: 5px; gap: 3px; }.module-grid svg { width: 14px; height: 14px; }
   .service-panel { padding: 9px 7px; }.panel-title h3 { font-size: 8px; }.panel-title > span { font-size: 6px; }.order-columns { gap: 4px; }.order-column { padding: 4px; }.order-column > span { font-size: 6px; }.order-card { padding: 7px 4px; }.order-card strong { font-size: 8px; }.order-card small { font-size: 5px; }.connection-note { font-size: 6px; gap: 4px; }
   .intelligence-composition { grid-template-columns: 1fr; gap: 12px; margin: 14px 0 0; }.daily-brief { padding: 20px; }.brief-top { font-size: 10px; }.brief-sample { font-size: 8px; }.daily-brief h3 { font-size: 24px; }.daily-brief > p, .brief-summary { font-size: 13px; }.brief-rule { margin-block: 15px; }.brief-bottom { margin-top: 18px; font-size: 11px; }.insight-stack { gap: 8px; }.insight-card { padding: 15px; gap: 12px; }.insight-card h3 { font-size: 13px; }.insight-card p { font-size: 12px; }.insight-icon { width: 32px; height: 32px; }.insight-icon svg { width: 17px; height: 17px; }figcaption { font-size: 9px; margin-top: 20px; }
 }
