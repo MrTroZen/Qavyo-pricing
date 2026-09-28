@@ -1,6 +1,6 @@
-# Qavyo pricing — hero, plans and Intelligence preview
+# Qavyo pricing — sections 1–5 preview
 
-Local standalone Next.js App Router project with TypeScript, Tailwind CSS v4, Lucide and locally bundled Manrope. Navigation, the approved hero and pricing plans, and Section 3 (Qavyo Intelligence) are implemented. The older prototype is not used.
+Local standalone Next.js App Router project with TypeScript, Tailwind CSS v4, Lucide and locally bundled Manrope. Navigation, the approved hero, pricing plans, Qavyo Intelligence, 30 Days. Full Qavyo., and the full feature comparison are implemented. The older prototype is not used.
 
 ## Run
 
@@ -41,10 +41,15 @@ pnpm start
 - `intelligence/IntelligenceDemo`: one connected sample workspace, with source data, observation, explanation, stock forecast, purchase recommendation, a local draft action, and pending outcome tracking.
 - `intelligence/IntelligencePlans`: compact accessible plan-selector buttons exposing Essential, Full and Multi-location details without repeating the pricing cards.
 - `intelligence/intelligence.module.css`: scoped responsive styles using the existing palette, Manrope, Lucide, radii and button system. The dark surface matches the hero's Daily Brief treatment.
+- `FullAccessTrial`: a connected Start / Experience / Choose journey, with an internal `UnlockedPlatform` component for the 30-day centerpiece and capability collection. Compact post-trial prices are informational, not automatic plan selections. Its CTA reuses `PreviewAction` until signup is connected.
+- `FullAccessTrial.module.css`: scoped light-surface styling. Desktop shows a horizontal journey; tablet uses a vertical rail beside the content; mobile stacks the journey with a prominent 30-day anchor. It reuses existing tokens, typography, Lucide icons and buttons without new dependencies.
+- `comparison/comparison-data.ts`: the specified 33 paid-plan features across seven categories, plus the eighth Intelligence category and its tier details. Minimum-plan indexes encode inclusion inheritance. No marketing capabilities or unconfirmed limits are added.
+- `comparison/FeatureComparison.tsx`: semantic desktop table, category navigation, expandable Intelligence details and a separate accessible selected-plan experience for smaller screens. Restaurant Operations starts open. Unavailable features remain visible with quiet minus icons and screen-reader labels.
+- `comparison/FeatureComparison.module.css`: scoped styling. From 900px the plan header sticks within the table. Below 900px the plan selector sticks above collapsible categories. The main navigation is not sticky, so the comparison header does not overlap it. Native disclosure controls and buttons support keyboard interaction.
 
 ## Assumptions and scope
 
-The new palette, spacing, type scale and surfaces are provisional design tokens, not a recovered brand system. The product interface is an illustrative design, not a production screenshot. The offer includes all eligible software and full Qavyo Intelligence for 30 days; paid plan selection follows the trial. Hardware entitlement is not implied. Starter is £29/month, Growth £79/month, and Business £149/month. No sections beyond Qavyo Intelligence have been built.
+The new palette, spacing, type scale and surfaces are provisional design tokens, not a recovered brand system. The product interface is an illustrative design, not a production screenshot. The offer includes all eligible software and full Qavyo Intelligence for 30 days; paid plan selection follows the trial. Hardware entitlement is not implied. Starter is £29/month, Growth £79/month, and Business £149/month. No sections beyond the full feature comparison have been built.
 
 The Intelligence demo uses fixed sample inputs: £860 sales vs £1,000 baseline, 36 dinner orders vs 50, 18 kg stock and 24 kg projected demand. The -14% sales change and 6 kg purchase suggestion are calculated in code. The forecast is a labelled illustrative input, not a live model prediction. The stock check is separate from the explanation of lower sales. The purchase button creates only local sample UI state; no order is sent or stored, and no successful outcome is invented. Reset restores the initial story.
 
@@ -63,6 +68,10 @@ Pricing-section checks also cover 1024px and 320px, the See Pricing anchor, all 
 Section 3 passed lint, TypeScript and production build checks. Browser verification at 1440, 1280, 768, 390 and 320px covered overflow, sample draft creation/reset, pending measurement state, all three Intelligence selectors and their complete feature lists. Keyboard activation, focus visibility and reduced-motion behavior passed. Full-page desktop and mobile screenshots were reviewed. Hero, pricing, header and global CSS file hashes remained unchanged during Section 3 work. Only the page composition and this README changed outside the new section.
 
 ## Created files
+
+Section 5 passed lint, TypeScript and production build checks. Browser checks at 1440, 1280, 768, 390 and 320px verified the 33 inclusion rows (17 Starter, 27 Growth, 33 Business), all Intelligence detail lists, sticky headers, category jumps, plan switching, keyboard focus, CTA notices and reduced motion. Regression checks covered navigation, the hero pricing anchor, pricing/trial CTAs, and Intelligence actions and selectors. No horizontal overflow, failed asset responses or browser runtime errors were found. Approved section source files were unchanged. The commit for Section 5 also includes the previously approved, uncommitted Section 4.
+
+Section 4 passed lint, TypeScript and production build checks. Browser checks at 1440, 1280, 768, 390 and 320px confirmed no horizontal overflow or runtime errors, working CTA notices, visible keyboard focus and reduced-motion behavior. The approved Hero, Pricing and Intelligence source files and global styles were not changed. Outside Section 4, only page composition and documentation changed.
 
 ```text
 .gitignore
@@ -89,6 +98,11 @@ src/components/intelligence/QavyoIntelligence.tsx
 src/components/intelligence/IntelligenceDemo.tsx
 src/components/intelligence/IntelligencePlans.tsx
 src/components/intelligence/intelligence.module.css
+src/components/FullAccessTrial.tsx
+src/components/FullAccessTrial.module.css
+src/components/comparison/comparison-data.ts
+src/components/comparison/FeatureComparison.tsx
+src/components/comparison/FeatureComparison.module.css
 ```
 
 Generated local artifacts: `node_modules`, `.next`, `tsconfig.tsbuildinfo`, and `.qa/hero-{1440,1280,768,390}.png` (ignored).

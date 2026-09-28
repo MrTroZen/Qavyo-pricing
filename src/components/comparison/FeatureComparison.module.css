@@ -1,0 +1,93 @@
+.section { background: var(--surface); border-top: 1px solid var(--border); padding-block: 72px 60px; scroll-margin-top: 24px; }
+.intro { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 34px; }
+.intro h2 { font-size: clamp(29px, 2.7vw, 38px); font-weight: 650; line-height: 1.22; letter-spacing: -.045em; margin: 14px 0 16px; }
+.intro > div > p:last-child { font-size: 15px; color: var(--secondary); line-height: 1.8; margin: 0; }
+.categoryJump { flex-shrink: 0; min-width: 235px; }
+.categoryJump label { display: block; font-size: 11px; font-weight: 700; color: var(--secondary); margin-bottom: 9px; }
+.categoryJump select { width: 100%; min-height: 46px; padding: 10px 34px 10px 13px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--ink); font: inherit; font-size: 12px; }
+.categoryJump select:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: 13px; }
+.featureColumn { width: 43%; }
+.table thead th { position: sticky; top: 0; z-index: 3; background: var(--surface); border-block: 1px solid var(--border); padding: 20px 16px; height: 142px; vertical-align: top; text-align: center; box-shadow: 0 4px 0 #17263303; }
+.table thead th:first-child { text-align: left; padding-left: 22px; vertical-align: middle; border-radius: var(--radius-sm) 0 0 0; }
+.table thead th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+.table thead .growthHeader { background: #f7f9fe; }
+.headerLabel { font-size: 10px; letter-spacing: .12em; color: var(--muted); }
+.headerNote { font-size: 13px; font-weight: 500; color: var(--secondary); margin: 10px 0 0; }
+.planName { display: block; font-size: 14px; font-weight: 750; margin-bottom: 7px; }
+.headerPrice { display: block; font-size: 25px; font-weight: 650; letter-spacing: -.04em; }
+.headerPrice small { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 4px; }
+.badge { display: inline-block; font-size: 10px; color: var(--accent); background: #e8eefb; border-radius: 5px; padding: 4px 8px; margin-top: 8px; }
+.table tbody th, .table tbody td { border-bottom: 1px solid var(--border); padding: 14px 22px; text-align: left; line-height: 1.6; }
+.table tbody th { font-weight: 500; color: var(--secondary); }
+.table tbody td { text-align: center; }
+.table .categoryRow { scroll-margin-top: 142px; }
+.table .categoryRow th { background: var(--page); padding-block: 18px; border-top: 18px solid white; font-size: 14px; font-weight: 750; color: var(--ink); }
+.categoryRow span { display: flex; align-items: center; gap: 11px; }
+.categoryRow svg { width: 18px; height: 18px; color: var(--secondary); }
+.included, .unavailable { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; }
+.included { color: var(--success); }
+.unavailable { color: #81909b; }
+.included svg, .unavailable svg { width: 18px; height: 18px; }
+.intelligenceRow td { color: var(--accent); font-weight: 750; font-size: 12px; }
+.table tbody .detailCell { padding: 0; text-align: left; }
+.intelligenceDetails summary { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 19px 22px; font-size: 12px; font-weight: 700; color: var(--secondary); cursor: pointer; list-style: none; }
+.intelligenceDetails summary::-webkit-details-marker, .mobileCategory summary::-webkit-details-marker { display: none; }
+.intelligenceDetails summary svg, .mobileCategory summary > svg:last-child { width: 17px; height: 17px; }
+.intelligenceDetails[open] summary > svg, .mobileCategory[open] summary > svg:last-child { transform: rotate(180deg); }
+.intelligenceDetails summary:focus-visible, .mobileCategory summary:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.intelligenceColumns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 10px 22px 25px; }
+.intelligenceColumns > div + div { padding-left: 24px; border-left: 1px solid var(--border); }
+.intelligenceColumns h3 { font-size: 14px; font-weight: 750; margin: 0 0 14px; }
+.intelligenceColumns h3 span { display: block; color: var(--accent); font-size: 12px; margin-top: 6px; }
+.intelligenceList > p { color: var(--secondary); font-size: 12px; font-weight: 650; line-height: 1.8; margin: 0 0 13px; }
+.intelligenceList ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+.intelligenceList li { font-size: 12px; line-height: 1.7; color: var(--secondary); display: flex; gap: 8px; align-items: baseline; }
+.intelligenceList li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #81909b; flex-shrink: 0; }
+.mobile { display: none; }
+.reassurance { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 32px; padding: 26px; border-radius: var(--radius-md); background: var(--page); }
+.reassurance h3 { font-size: 20px; font-weight: 650; letter-spacing: -.03em; margin: 0 0 8px; }
+.reassurance p { font-size: 13px; color: var(--secondary); line-height: 1.8; margin: 0; max-width: 620px; }
+.reassurance > button { flex-shrink: 0; }
+@media (max-width: 899px) {
+  .section { padding-block: 54px 44px; }
+  .desktop { display: none; }
+  .mobile { display: block; }
+  .intro { align-items: start; flex-direction: column; gap: 22px; }
+  .categoryJump { width: 100%; }
+  .mobilePlanBar { position: sticky; top: 0; z-index: 3; background: white; padding-block: 12px; border-bottom: 1px solid var(--border); }
+  .planButtons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+  .planButtons button { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 102px; gap: 5px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 5px; color: var(--secondary); }
+  .planButtons button[aria-pressed='true'] { border-color: var(--accent); background: #f2f6fd; color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+  .planButtons strong { font-size: 14px; font-weight: 750; }
+  .planButtons button > span { font-size: 16px; font-weight: 650; }
+  .planButtons small { font-size: 10px; font-weight: 500; margin-left: 3px; }
+  .planButtons button .mobileBadge { color: var(--accent); font-size: 9px; font-weight: 700; }
+  .mobilePlanBar > p { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; font-size: 10px; color: var(--secondary); margin: 11px 0 0; }
+  .mobilePlanBar > p svg { width: 13px; height: 13px; margin-left: 5px; }
+  .mobilePlanBar > p svg:first-of-type { color: var(--success); }
+  .mobileCategory { border-bottom: 1px solid var(--border); scroll-margin-top: 166px; }
+  .mobileCategory summary { min-height: 64px; display: flex; align-items: center; gap: 11px; padding: 17px 12px; font-size: 14px; font-weight: 750; cursor: pointer; list-style: none; color: var(--ink); }
+  .mobileCategory summary > svg:first-child { width: 18px; height: 18px; color: var(--secondary); }
+  .mobileCategory summary > svg:last-child { margin-left: auto; flex-shrink: 0; }
+  .mobileCategory summary small { display: block; color: var(--accent); font-size: 12px; font-weight: 650; margin-top: 5px; }
+  .mobileCategory[open] summary { background: var(--page); }
+  .mobileCategory > ul { margin: 0; padding: 0 12px 12px; list-style: none; }
+  .mobileCategory > ul > li { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #edf0f3; padding: 14px 0; color: var(--secondary); font-size: 13px; line-height: 1.65; }
+  .mobileCategory > ul > li:last-child { border-bottom: 0; }
+  .mobileCategory .included, .mobileCategory .unavailable { flex-shrink: 0; width: 25px; }
+  .mobileCategory .intelligenceList { padding: 20px 12px; }
+  .mobileCategory .intelligenceList li { font-size: 13px; }
+  .reassurance { align-items: start; flex-direction: column; gap: 20px; }
+}
+@media (max-width: 599px) {
+  .section { padding-block: 43px 36px; }
+  .intro h2 { font-size: 30px; }
+  .intro > div > p:last-child { font-size: 14px; }
+  .planButtons { gap: 6px; }
+  .planButtons strong { font-size: 12px; }
+  .mobileCategory summary { font-size: 13px; padding-inline: 8px; gap: 9px; }
+  .reassurance { padding: 22px; }
+  .reassurance > button { width: 100%; font-size: 13px; padding-inline: 12px; }
+}
