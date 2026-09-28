@@ -1,6 +1,6 @@
-# Qavyo pricing — sections 1–6 preview
+# Qavyo pricing — sections 1–7 preview
 
-Local standalone Next.js App Router project with TypeScript, Tailwind CSS v4, Lucide and locally bundled Manrope. Navigation, the approved hero, pricing plans, Qavyo Intelligence, 30 Days. Full Qavyo., full feature comparison, and flexible hardware section are implemented. The older prototype is not used.
+Local standalone Next.js App Router project with TypeScript, Tailwind CSS v4, Lucide and locally bundled Manrope. Navigation, the approved hero, pricing plans, Qavyo Intelligence, 30 Days. Full Qavyo., full feature comparison, flexible hardware, and Qavyo-certified setup options are implemented. The older prototype is not used.
 
 ## Run
 
@@ -48,10 +48,12 @@ pnpm start
 - `comparison/FeatureComparison.module.css`: scoped styling. From 900px the plan header sticks within the table. Below 900px the plan selector sticks above collapsible categories. The main navigation is not sticky, so the comparison header does not overlap it. Native disclosure controls and buttons support keyboard interaction.
 - `hardware/HardwareSection.tsx`: Section 6 copy, an interactive internal `HardwareEcosystem`, two hardware routes, and the concise certified/customer-owned support distinction. Five neutral Lucide-based device representations avoid brand, operating-system and universal-compatibility claims. Focusing, hovering or selecting a device updates the accessible status label.
 - `hardware/HardwareSection.module.css`: scoped hardware composition using existing tokens. Desktop and tablet connect devices to a central Qavyo hub; mobile intentionally replaces the diagram with a readable two-column device grid. The route and support surfaces then stack naturally.
+- `hardware/HardwareSetupSection.tsx`: Section 7 intro, prominent hardware/software independence rule, three example configurations, concise Qavyo-certified meaning, configuration journey, acquisition routes and payments transition. Hardware prices and unfinalized finance terms are omitted.
+- `hardware/HardwareSetupSection.module.css`: scoped physical-configuration presentation. Desktop compares three setup benches; tablet turns each into a wide equipment layout; mobile stacks configurations while preserving readable device names, quantities and example status.
 
 ## Assumptions and scope
 
-The new palette, spacing, type scale and surfaces are provisional design tokens, not a recovered brand system. The product interface is an illustrative design, not a production screenshot. The offer includes all eligible software and full Qavyo Intelligence for 30 days; paid plan selection follows the trial. Hardware entitlement is not implied. Starter is £29/month, Growth £79/month, and Business £149/month. Hardware compatibility depends on the device, operating system, peripherals and integrations; payment terminal inclusion in the visual does not claim universal payment compatibility. No sections beyond flexible hardware have been built.
+The new palette, spacing, type scale and surfaces are provisional design tokens, not a recovered brand system. The product interface is an illustrative design, not a production screenshot. The offer includes all eligible software and full Qavyo Intelligence for 30 days; paid plan selection follows the trial. Hardware entitlement is not implied. Starter is £29/month, Growth £79/month, and Business £149/month. Hardware compatibility depends on the device, operating system, peripherals and integrations; payment terminal inclusion in the visual does not claim universal payment compatibility. Hardware configurations are examples independent from software tiers. Payment options are described only as available where eligible. No sections beyond Qavyo-certified hardware setup options have been built.
 
 The Intelligence demo uses fixed sample inputs: £860 sales vs £1,000 baseline, 36 dinner orders vs 50, 18 kg stock and 24 kg projected demand. The -14% sales change and 6 kg purchase suggestion are calculated in code. The forecast is a labelled illustrative input, not a live model prediction. The stock check is separate from the explanation of lower sales. The purchase button creates only local sample UI state; no order is sent or stored, and no successful outcome is invented. Reset restores the initial story.
 
@@ -74,6 +76,8 @@ Section 3 passed lint, TypeScript and production build checks. Browser verificat
 Section 5 passed lint, TypeScript and production build checks. Browser checks at 1440, 1280, 768, 390 and 320px verified the 33 inclusion rows (17 Starter, 27 Growth, 33 Business), all Intelligence detail lists, sticky headers, category jumps, plan switching, keyboard focus, CTA notices and reduced motion. Regression checks covered navigation, the hero pricing anchor, pricing/trial CTAs, and Intelligence actions and selectors. No horizontal overflow, failed asset responses or browser runtime errors were found. Approved section source files were unchanged. The commit for Section 5 also includes the previously approved, uncommitted Section 4.
 
 Section 6 passed lint, TypeScript and production build checks. Browser checks at 1440, 1280, 768, 390 and 320px verified all five device controls, live device labels, keyboard focus and reduced motion. Regression checks covered navigation, the hero pricing anchor, pricing/trial CTAs, Intelligence actions and selectors, and mobile comparison selection. No horizontal overflow, failed responses or browser runtime errors were found. Approved section source files were unchanged; only page composition and documentation changed outside Section 6.
+
+Section 7 passed responsive browser checks at 1440, 1280, 768, 390 and 320px. Verification covered all three configuration figures, hardware/software independence, eligibility wording, approved navigation and interactions, horizontal overflow, failed responses and browser runtime errors. Approved section source files were unchanged; only page composition and documentation changed outside Section 7.
 
 Section 4 passed lint, TypeScript and production build checks. Browser checks at 1440, 1280, 768, 390 and 320px confirmed no horizontal overflow or runtime errors, working CTA notices, visible keyboard focus and reduced-motion behavior. The approved Hero, Pricing and Intelligence source files and global styles were not changed. Outside Section 4, only page composition and documentation changed.
 
@@ -109,6 +113,8 @@ src/components/comparison/FeatureComparison.tsx
 src/components/comparison/FeatureComparison.module.css
 src/components/hardware/HardwareSection.tsx
 src/components/hardware/HardwareSection.module.css
+src/components/hardware/HardwareSetupSection.tsx
+src/components/hardware/HardwareSetupSection.module.css
 ```
 
 Generated local artifacts: `node_modules`, `.next`, `tsconfig.tsbuildinfo`, and `.qa/hero-{1440,1280,768,390}.png` (ignored).
